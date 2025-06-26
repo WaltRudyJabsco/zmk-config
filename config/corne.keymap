@@ -51,7 +51,7 @@ combo_tilde {
    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    
    &mt LCTRL A &mt LALT S &mt LSHFT D &mt LGUI F &kp G   &kp H &mt RGUI J &mt RSHFT K  &mt RALT L   &mt RCTRL SEMI 
    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH 
-                  &kp LG(DEL) &mt mo 1 ENTER &kp TAB   &kp DEL &mt  mo 2 SPACE &mo 3
+                  &kp LG(DEL) &lt 1 ENTER &kp TAB   &kp DEL &lt 2 SPACE &mo 3
                         >;
                 };
 
