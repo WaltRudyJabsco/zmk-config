@@ -66,7 +66,7 @@ combo_tilde {
 &none   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0    &none
 &none  &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &trans   &trans &trans    &trans &none
 &none   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_PP &kp C_NEXT   &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH &none
-                  &trans &mo 1 &trans   &trans &trans &trans
+                  &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
@@ -80,7 +80,7 @@ combo_tilde {
 &none  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR    &none
 &none  &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &kp LEFT &kp DOWN &kp UP &kp RIGHT &none
 &none   &kp HOME &kp PG_UP &kp PG_DN &kp END &trans   &kp RS(MINUS) &kp RS(EQUAL) &kp RS(LBKT)  &kp RS(RBKT) &kp RS(BSLH) &none
-                  &trans &trans &trans   &trans &mo 2 &trans
+                  &trans &trans &trans   &trans &trans &trans
                         >;
                 };
 
@@ -88,15 +88,29 @@ combo_tilde {
 // -----------------------------------------------------------------------------------------
 // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |    |  mouse1  |  mouse3  |  mouse2  |  wheelup  
 // |     |     |     |     |    |  TAB | TAB  | mouselft | mousedown | mouseup | mousert
-// |  rgbonoff  |   rgbmode |  hueup  |  huedn  |  next  |  |  _  |  +  |  {  |  }  | wheeldn|
+// |    |    |    |    |    |  |  _  |  +  |  {  |  }  | wheeldn|
 //                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
                         bindings = <
   &none &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &trans   &mkp MB1   &mkp MB3 &mkp MB2     &msc SCRL_UP &none   
  &none &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
- &none  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_EFF &rgb_ug RGB_EFR &trans       &kp LG(LBKT) &kp LC(RS(TAB)) &kp LC(TAB)  &kp F &msc SCRL_DOWN &none
-                  &trans &trans &trans   &trans &trans &mo 3
+ &none  &trans  &trans  &trans  &trans  &trans       &kp LG(LBKT) &kp LC(RS(TAB)) &kp LC(TAB)  &kp F &msc SCRL_DOWN &none
+                  &trans &trans &trans   &trans &trans &trans
                         >;
                 };
+
+//mouse_layer {
+// -----------------------------------------------------------------------------------------
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |    |  mouse1  |  mouse3  |  mouse2  |  wheelup  
+// |     |     |     |     |    |  TAB | TAB  | mouselft | mousedown | mouseup | mousert
+// |  rgbonoff  |   rgbmode |  hueup  |  huedn  |  next  |  |  _  |  +  |  {  |  }  | wheeldn|
+//                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
+ //                       bindings = <
+ // &none &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &trans   &mkp MB1   &mkp MB3 &mkp MB2     &msc SCRL_UP &none   
+// &none &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &none
+// &none  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &rgb_ug RGB_EFF &rgb_ug RGB_EFR &trans       &kp LG(LBKT) &kp LC(RS(TAB)) &kp LC(TAB)  &kp F &msc SCRL_DOWN &none
+//                  &trans &trans &trans   &trans &trans &mo 3
+  //                      >;
+ //               };
 
 
 //               original_default_layer {
