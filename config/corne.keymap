@@ -13,13 +13,17 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
-/ {
+
+/ {  
+        chosen {
+        zmk,physical-layout = &foostan_corne_5col_layout;
+    };
 
 combos {
         compatible = "zmk,combos";
         combo_esc {
-            timeout-ms = <100>;
-            key-positions = <A S>;
+            timeout-ms = <50>;
+            key-positions = <11 12>;
             bindings = <&kp ESC>;
         };
 //combo_tab {
@@ -28,23 +32,16 @@ combos {
       //      bindings = <&kp TAB>;
  //       };
 combo_SQT {
-            timeout-ms = <100>;
-            key-positions = <L SEMI>;
+            timeout-ms = <50>;
+            key-positions = <19 20>;
             bindings = <&kp SQT>;
         };
 combo_tilde {
-            timeout-ms = <100>;
-            key-positions = <Q W>;
+            timeout-ms = <50>;
+            key-positions = <0 1>;
             bindings = <&kp GRAVE>;
         };
     };
-};
-
-/ {  
-        chosen {
-        zmk,physical-layout = &foostan_corne_5col_layout;
-    };
-
 
 
         keymap {
