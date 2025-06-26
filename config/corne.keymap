@@ -77,7 +77,7 @@ combo_tilde {
 // |  home  |  pgup  |  pgdn  |  end  |    |  |  _  |  +  |  {  |  }  | "|" |
 //                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
                         bindings = <
-   &kp RS(N1)       &kp RS(N2)       &kp RS(N3)       &kp RS(N4)       &kp RS(N5)         &kp RS(N6)   &kp RS(N7)   &kp RS(N8) &kp RS(N9)    &kp RS(N0)    
+  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR    
   &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &kp LEFT &kp DOWN &kp UP &kp RIGHT
    &kp HOME &kp PG_UP &kp PG_DN &kp END &trans   &kp RS(MINUS) &kp RS(EQUAL) &kp RS(LBKT)  &kp RS(RBKT) &kp RS(BSLH)
                   &trans &trans &trans   &trans &mo 2 &trans
