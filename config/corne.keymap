@@ -49,7 +49,7 @@ combo_tilde {
 //                    | LG DEL | RET numlayer | TAB |   | DEL | SPACE arrows | mouselayer |
                         bindings = <
    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    
-   &mt LCTRL A &mt LALT S &mt LSHFT D &mt LGUI F &kp G   &kp H &mt RGUI j &mt RSHFT K  &mt RALT L   &mt RCTRL SEMI 
+   &mt LCTRL A &mt LALT S &mt LSHFT D &mt LGUI F &kp G   &kp H &mt RGUI J &mt RSHFT K  &mt RALT L   &mt RCTRL SEMI 
    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH 
                   &kp LG(DEL) &mt mo 1 ENTER &kp TAB   &kp DEL &mt  mo 2 SPACE &mo 3
                         >;
@@ -90,9 +90,9 @@ combo_tilde {
 // |  rgbonoff  |   rgbmode |  hueup  |  huedn  |  next  |  |  _  |  +  |  {  |  }  | wheeldn|
 //                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
                         bindings = <
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &trans   &kp MB1   &kp MB3 &kp MB2     &kp SCRL_UP    
-  &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &kp MOVE_LEFT &kp MOVE_DOWN &kp MOVE_UP &kp MOVE_RIGHT
-   &kp RGB_TOG &kp RGB_EFF &kp RGB_EFF &kp RGB_EFR &trans       &kp LG([) &kp LC(RS(TAB)) &kp LC(TAB)  &kp F &kp SCRL_DOWN
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &trans   &kp MB1   &kp MB3 &kp MB2     &msc SCRL_UP    
+  &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   fv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+   &kp RGB_TOG &kp RGB_EFF &kp RGB_EFF &kp RGB_EFR &trans       &kp LG([) &kp LC(RS(TAB)) &kp LC(TAB)  &kp F &msc SCRL_DOWN
                   &trans &trans &trans   &trans &trans &mo 3
                         >;
                 };
