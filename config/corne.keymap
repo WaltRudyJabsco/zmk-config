@@ -9,6 +9,16 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+
+behaviors {
+        td0: tap_dance_0 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LCTRL &kp a>;
+        };
+    };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -17,12 +27,26 @@
 // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
 // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |
 // |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+//                    | LG DEL | RET numlayer | TAB |   | DEL | SPACE arrows | mouselayer |
                         bindings = <
    &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    
-   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI 
+   &mt LCTRL A &mt LALT S &mt LSHFT D &mt LGUI F &kp G   &kp H &mt RGUI j &mt RSHFT K     &mt RALT L   &mt RCTRL SEMI 
    &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH 
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
+                  &kp LG(DEL) &mt mo 1 ENTER &kp TAB   &kp DEL &mt  mo 2 SPACE &mo 3
+                        >;
+                };
+
+        num_media_layer {
+// -----------------------------------------------------------------------------------------
+// |  1 |  2  |  3  |  4  |  5   |   |  6  |  7  |  8  |  9  |  0  |
+// |     |     |     |     |   TAB  |   | TAB |     |     |     |     ||
+// |  Z  |  X  |  C  |  V  |  B  |   |  -  |  =  |  [  |  ]  |  \  |
+//                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
+                        bindings = <
+   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0    
+  &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &trans   &trans &trans    &trans 
+   &kp Z &kp X &kp C &kp V &kp B   &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH 
+                  &trans &mo 1 &trans   &trans &trans &trans
                         >;
                 };
 
