@@ -85,7 +85,7 @@ combo_tilde {
 
         mouse_layer {
 // -----------------------------------------------------------------------------------------
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |    |  mouse1  |  mouse3  |  mouse2  |  wheelup  |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |    |  mouse1  |  mouse3  |  mouse2  |  wheelup  
 // |     |     |     |     |    |  TAB | TAB  | mouselft | mousedown | mouseup | mousert
 // |  rgbonoff  |   rgbmode |  hueup  |  huedn  |  next  |  |  _  |  +  |  {  |  }  | wheeldn|
 //                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
