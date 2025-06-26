@@ -26,12 +26,12 @@ combo_tab {
             key-positions = <LCTRL LALT>;
             bindings = <&kp TAB>;
         };
-combo_' {
+combo_SQT {
             timeout-ms = <50>;
             key-positions = <RCTRL RALT>;
             bindings = <&kp SQT>;
         };
-combo_` {
+combo_tilde {
             timeout-ms = <50>;
             key-positions = <Z X>;
             bindings = <&kp TILDE>;
