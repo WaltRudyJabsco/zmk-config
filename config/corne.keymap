@@ -18,24 +18,24 @@
 combos {
         compatible = "zmk,combos";
         combo_esc {
-            timeout-ms = <50>;
-            key-positions = <Q W>;
+            timeout-ms = <100>;
+            key-positions = <A S>;
             bindings = <&kp ESC>;
         };
-combo_tab {
-            timeout-ms = <50>;
-            key-positions = <LCTRL LALT>;
-            bindings = <&kp TAB>;
-        };
+//combo_tab {
+  //          timeout-ms = <50>;
+    //        key-positions = <LCTRL LALT>;
+      //      bindings = <&kp TAB>;
+ //       };
 combo_SQT {
-            timeout-ms = <50>;
-            key-positions = <RCTRL RALT>;
+            timeout-ms = <100>;
+            key-positions = <L SEMI>;
             bindings = <&kp SQT>;
         };
 combo_tilde {
-            timeout-ms = <50>;
-            key-positions = <Z X>;
-            bindings = <&kp TILDE>;
+            timeout-ms = <100>;
+            key-positions = <Q W>;
+            bindings = <&kp GRAVE>;
         };
     };
 };
