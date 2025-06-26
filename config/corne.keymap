@@ -4,18 +4,37 @@
  * SPDX-License-Identifier: MIT
  */
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 600  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 10    // default: 10
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/pointing.h>
 
 / {
 
-behaviors {
-        td0: tap_dance_0 {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LCTRL &kp a>;
+combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <Q W>;
+            bindings = <&kp ESC>;
+        };
+combo_tab {
+            timeout-ms = <50>;
+            key-positions = <LCTRL LALT>;
+            bindings = <&kp TAB>;
+        };
+combo_' {
+            timeout-ms = <50>;
+            key-positions = <RCTRL RALT>;
+            bindings = <&kp SQT>;
+        };
+combo_` {
+            timeout-ms = <50>;
+            key-positions = <Z X>;
+            bindings = <&kp TILDE>;
         };
     };
 
@@ -40,15 +59,44 @@ behaviors {
 // -----------------------------------------------------------------------------------------
 // |  1 |  2  |  3  |  4  |  5   |   |  6  |  7  |  8  |  9  |  0  |
 // |     |     |     |     |   TAB  |   | TAB |     |     |     |     ||
-// |  Z  |  X  |  C  |  V  |  B  |   |  -  |  =  |  [  |  ]  |  \  |
+// |  mute  |  vol-  |  vol+  |  play  |  next  |   |  -  |  =  |  [  |  ]  |  \  |
 //                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
                         bindings = <
    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0    
   &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &trans   &trans &trans    &trans 
-   &kp Z &kp X &kp C &kp V &kp B   &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH 
+   &kp C_MUTE &kp C_VOL_DN &kp C_VOL_UP &kp C_PP &kp C_NEXT   &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH 
                   &trans &mo 1 &trans   &trans &trans &trans
                         >;
                 };
+
+        arrow_layer {
+// -----------------------------------------------------------------------------------------
+// |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |
+// |     |     |     |     |   TAB  |   | TAB  LFT | DWN |  UP | RGT 
+// |  home  |  pgup  |  pgdn  |  end  |    |  |  _  |  +  |  {  |  }  | "|" |
+//                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
+                        bindings = <
+   &kp RS(N1)       &kp RS(N2)       &kp RS(N3)       &kp RS(N4)       &kp RS(N5)         &kp RS(N6)   &kp RS(N7)   &kp RS(N8) &kp RS(N9)    &kp RS(N0)    
+  &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &kp LEFT &kp DOWN &kp UP &kp RIGHT
+   &kp HOME &kp PG_UP &kp PG_DN &kp END &trans   &kp RS(MINUS) &kp RS(EQUAL) &kp RS(LBKT)  &kp RS(RBKT) &kp RS(BSLH)
+                  &trans &trans &trans   &trans &mo 2 &trans
+                        >;
+                };
+
+        mouse_layer {
+// -----------------------------------------------------------------------------------------
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |    |  mouse1  |  mouse3  |  mouse2  |  wheelup  |
+// |     |     |     |     |    |  TAB | TAB  | mouselft | mousedown | mouseup | mousert
+// |  rgbonoff  |   rgbmode |  hueup  |  huedn  |  next  |  |  _  |  +  |  {  |  }  | wheeldn|
+//                    | GUI | RET | TAB |   | DEL | SPACE  | ALT |
+                        bindings = <
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4          &trans   &kp MB1   &kp MB3 &kp MB2     &kp SCRL_UP    
+  &trans       &trans       &trans       &trans       &kp TAB         &kp TAB   &kp MOVE_LEFT &kp MOVE_DOWN &kp MOVE_UP &kp MOVE_RIGHT
+   &kp RGB_TOG &kp RGB_EFF &kp RGB_EFF &kp RGB_EFR &trans       &kp LG([) &kp LC(RS(TAB)) &kp LC(TAB)  &kp F &kp SCRL_DOWN
+                  &trans &trans &trans   &trans &trans &mo 3
+                        >;
+                };
+
 
 //               original_default_layer {
 // -----------------------------------------------------------------------------------------
@@ -64,33 +112,7 @@ behaviors {
 //                        >;
 //                };
 
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  |
-// | BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |
-// |     |     |     |     |     |   |     |     |     |     |     |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans 
-   &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans 
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
 
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  |
-// |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |
-// |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp ASTRK &kp LPAR &kp RPAR 
-  &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT  &kp RBKT &kp BSLH 
-   &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC  &kp RBRC &kp PIPE 
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
 //
 //             original_lower_layer {
 // -----------------------------------------------------------------------------------------
