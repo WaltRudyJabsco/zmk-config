@@ -20,6 +20,13 @@ The source selection currently follows ZMK `v0.2` through the manifest defaults.
 ZMK's reusable build-user-config workflow. These are the settings in this
 snapshot, rather than an instruction to upgrade firmware dependencies.
 
+## Observed build status
+
+The pinned v0.2 firmware compiles to UF2, but the current reusable workflow fails its board-compatibility check with `KeyError: 'qualifiers'`. This is a workflow/tooling compatibility issue to investigate before relying on published artifacts.
+See the [CI run](https://github.com/WaltRudyJabsco/zmk-config/actions/runs/41268297006).
+The documentation change leaves the keymap, firmware settings, dependency
+selection and workflow bytes unchanged; it does not repair this existing setup.
+
 ## Build and use
 
 1. Edit the keymap or feature settings, then commit the configuration.
